@@ -150,9 +150,7 @@ public class LinkStrand implements IDnaStrand {
 			myCurrent = current;
 			myLocalIndex = dex;
 		}
-		myIndex = index;
 		return current.info.charAt(myLocalIndex);
-	
 	}
 
 }
