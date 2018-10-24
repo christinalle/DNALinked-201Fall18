@@ -69,7 +69,7 @@ public class LinkStrand implements IDnaStrand {
 	@Override
 	public IDnaStrand reverse() {
 		// TODO Auto-generated method stub
-		Node current = myFirst;
+		Node current = this.myFirst;
 		Node previous = null;
 		Node next = null;
 		LinkStrand ret = new LinkStrand();
@@ -150,7 +150,9 @@ public class LinkStrand implements IDnaStrand {
 			myCurrent = current;
 			myLocalIndex = dex;
 		}
+		myIndex = index;
 		return current.info.charAt(myLocalIndex);
+	
 	}
 
 }
