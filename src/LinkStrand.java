@@ -61,7 +61,6 @@ public class LinkStrand implements IDnaStrand {
 		
 		while(current!= null) {
 			ret = ret.append(current.info);
-			System.out.print(ret.toString());
 			current = current.next;
 		}
 		return ret.toString();
