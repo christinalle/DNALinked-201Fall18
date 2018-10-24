@@ -117,6 +117,11 @@ public class LinkStrand implements IDnaStrand {
 		while(count!=index) {
 			count++;
 			dex++;
+			if(count >= mySize-1) {
+				myIndex = 0;
+				myLocalIndex = 0;
+				myCurrent = myFirst;
+			}
 			if(dex >= current.info.length()) {
 			dex = 0;
 			current = current.next;
@@ -126,5 +131,6 @@ public class LinkStrand implements IDnaStrand {
 		}
 		myIndex = index;
 		return current.info.charAt(myLocalIndex);
+	
 	}
 }
