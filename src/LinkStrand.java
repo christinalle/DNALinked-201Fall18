@@ -75,7 +75,6 @@ public class LinkStrand implements IDnaStrand {
 		LinkStrand ret = new LinkStrand();
 		
 		while(current != null) {
-			current.info = helpRev(current.info);
 			next = current.next;
 			current.next = previous;
 			previous = current;
@@ -85,20 +84,18 @@ public class LinkStrand implements IDnaStrand {
 		current = myFirst;
 		
 		while(current != null) {
+	    StringBuilder copy = new StringBuilder(current.info);
+		copy.reverse();
+		current.info = copy.toString();
 		ret.append(current.info);
 		current = current.next;
 		}
+		
 	return ret;
 
 	}
 	
-	public String helpRev(String s) {
-		
-			StringBuilder copy = new StringBuilder(s);
-			copy.reverse();
-			return copy.toString();
 	
-	}
 	@Override
 	public int getAppendCount() {
 		// TODO Auto-generated method stub
