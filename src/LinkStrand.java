@@ -110,27 +110,22 @@ public class LinkStrand implements IDnaStrand {
 		// TODO Auto-generated method stub
 		if(index >= mySize) 
 			 throw new IndexOutOfBoundsException();
-			
-		Node current = myCurrent;
-		int dex = myLocalIndex;
-		int count = myIndex;
-		while(count!=index) {
-			count++;
-			dex++;
-			if(count >= mySize-1) {
+		
+		while(myIndex!=index) {
+			myIndex++;
+			myLocalIndex++;
+			if(myIndex >= mySize-1) {
 				myIndex = 0;
 				myLocalIndex = 0;
 				myCurrent = myFirst;
 			}
-			if(dex >= current.info.length()) {
-			dex = 0;
-			current = current.next;
+			if(myLocalIndex >= myCurrent.info.length()) {
+			myLocalIndex = 0;
+			myCurrent = myCurrent.next;
 			}
-			myCurrent = current;
-			myLocalIndex = dex;
 		}
-		myIndex = index;
-		return current.info.charAt(myLocalIndex);
+		return myCurrent.info.charAt(myLocalIndex);
 	
 	}
+	
 }
