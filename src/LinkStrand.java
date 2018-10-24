@@ -81,7 +81,7 @@ public class LinkStrand implements IDnaStrand {
 			current = next;
 		}
 		myFirst = previous;
-		current = myFirst;
+		current = previous;
 		
 		while(current != null) {
 	    StringBuilder copy = new StringBuilder(current.info);
