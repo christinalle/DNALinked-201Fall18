@@ -104,29 +104,28 @@ public class LinkStrand implements IDnaStrand {
 		return myAppends;
 	}
 	
-/**	@Override
+   @Override
 	public char charAt(int index) {
 		// TODO Auto-generated method stub
 		if(index >= mySize) 
 			 throw new IndexOutOfBoundsException();
-		
+		if(myIndex > index){
+		myCurrent = myFirst;
+		myIndex = 0;
+		myLocalIndex = 0;
+		}
 		while(myIndex!=index) {
 			myIndex++;
 			myLocalIndex++;
-			if(myIndex >= mySize-1) {
-				myIndex = 0;
-				myLocalIndex = 0;
-				myCurrent = myFirst;
-			}
 			if(myLocalIndex >= myCurrent.info.length()) {
 			myLocalIndex = 0;
 			myCurrent = myCurrent.next;
 			}
 		}
 		return myCurrent.info.charAt(myLocalIndex);
-	
 	}
-	**/
+	
+	/**
 	
 	
 	@Override
@@ -138,6 +137,7 @@ public class LinkStrand implements IDnaStrand {
 		Node current = myCurrent;
 		int dex = myLocalIndex;
 		int count = myIndex;
+		
 		while(count!=index) {
 			count++;
 			dex++;
@@ -157,5 +157,6 @@ public class LinkStrand implements IDnaStrand {
 		return current.info.charAt(myLocalIndex);
 	
 	}
+	**/
 
 }
