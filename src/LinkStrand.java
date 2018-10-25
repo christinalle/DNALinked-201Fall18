@@ -69,10 +69,11 @@ public class LinkStrand implements IDnaStrand {
 	@Override
 	public IDnaStrand reverse() {
 		// TODO Auto-generated method stub
+	    LinkStrand ret = new LinkStrand();
+	    Node original = this.myFirst;
 		Node current = this.myFirst;
 		Node previous = null;
 		Node next = null;
-		LinkStrand ret = new LinkStrand();
 		
 		while(current != null) {
 			next = current.next;
@@ -80,6 +81,7 @@ public class LinkStrand implements IDnaStrand {
 			previous = current;
 			current = next;
 		}
+		
 		current = previous;
 		
 		while(current != null) {
@@ -129,7 +131,7 @@ public class LinkStrand implements IDnaStrand {
 	@Override
 	public char charAt(int index) {
 		// TODO Auto-generated method stub
-		if(index >= mySize) 
+		if(index >= mySize || index < 0) 
 			 throw new IndexOutOfBoundsException();
 			
 		Node current = myCurrent;
