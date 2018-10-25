@@ -107,7 +107,7 @@ public class LinkStrand implements IDnaStrand {
    @Override
 	public char charAt(int index) {
 		// TODO Auto-generated method stub
-		if(index >= mySize) 
+		if(index >= mySize || index < 0) 
 			 throw new IndexOutOfBoundsException();
 		if(myIndex > index){
 		myCurrent = myFirst;
@@ -118,8 +118,8 @@ public class LinkStrand implements IDnaStrand {
 			myIndex++;
 			myLocalIndex++;
 			if(myLocalIndex >= myCurrent.info.length()) {
-			myLocalIndex = 0;
-			myCurrent = myCurrent.next;
+				myLocalIndex = 0;
+				myCurrent = myCurrent.next;
 			}
 		}
 		return myCurrent.info.charAt(myLocalIndex);
