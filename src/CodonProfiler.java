@@ -31,14 +31,19 @@ public class CodonProfiler {
 				}
 				String cod = ""+a+b+c;
 				
+				// if codon is present, add 1 to the value
 				if (map.containsKey(cod)) {
 					 map.put(cod, map.get(cod)+1);
 				}
+				
+				// if codon isn't present, create a new key and
+				// make the value of that key 1
 				else map.put(cod, 1);
 			}
 	
 			
-		
+		// iterates through the values in the map and puts those
+	    // values into the return array
 		for(int i = 0; i <codons.length; i++) {
 			if(map.containsKey(codons[i])) {
 			ret[i] = map.get(codons[i]);
